@@ -1,0 +1,76 @@
+.green-box{
+    background-color: green;
+    padding: 30px;
+    flex-grow: 1;
+    min-width: 100px;
+}
+
+
+.red-box{
+    background-color: red;
+    padding: 30px;
+    order: 3;
+    flex-grow: 1;
+    min-width: 100px;
+}
+
+
+.blue-box{
+    background-color: blue;
+    padding: 30px;
+    flex-grow: 3;
+    /* questa box sarà il triplo delle altre due finchè potrà (restringendo lo spazio) */
+    min-width: 300px;
+    /* dando una min width con il wrap, le box si restringeranno fino ad andare a capo quando raggiungono la min width */
+}
+
+.box-height{
+    height: 100px;
+}
+
+.box-width{
+    width: 100px;
+}
+
+.box-container{
+    height: 600px;
+    background-color: blueviolet;
+    display: flex;
+    /* tutti i figli all'interno diventano row (inline-block) con le loro dimensioni per default  */
+    flex-direction: row-reverse;
+    /* le mette in linea in ordine contrario e dalla parte opposta dello schermo */
+    flex-direction: column;
+    /* li mette in colonna come fossero block */
+    flex-direction: column-reverse;
+    /* li mette in colonna in ordine diverso */
+    flex-direction: row;
+    /* implicita */
+    flex-wrap: wrap-reverse;
+    /* uguale al wrap ma il primo diventa l'ultimo ad andare a caso */
+    flex-wrap: nowrap;
+    /* pur dando le dimensioni ai figli, il nowrap se ne frega e diminuendo le dimensioni della finestra, diminuiscono anche le dimensioni dei figli
+    nonostante abbiano dimensioni prefissate */
+    flex-wrap: wrap;
+    /* cambiando le dimensioni dello schermo, i figli andranno a capo  */
+    justify-content: flex-start;
+    /* elementi allineati all'inizio della flex */
+    justify-content: flex-end;
+    justify-content: center;
+    justify-content: space-around;
+    /* da margine uguale a tutti gli elementi */
+    justify-content: space-between;
+    /* da margine al centro ma non agli estremi*/
+    justify-content: space-evenly;
+    /* da margini uguali a tutti senza sommare i due margini al centro come space around */
+    
+    align-items: flex-end;
+    /* allinea in basso */
+    align-items: flex-start;
+    /* allinea in alto */
+    align-items: center;
+    /* li allinea al centro in altezza e larghezza */
+    align-items: stretch;
+    /* NON FUNZIONA CON MISURE FISSE SUI FIGLI ma li espande per tutta la grandezza del contenitore - è di default */
+    align-items: baseline;
+    /* allinea gli items ad uno degli elementi più grandi e non alla base del container */
+}
